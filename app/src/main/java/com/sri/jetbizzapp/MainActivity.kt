@@ -21,6 +21,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CardElevation
+import androidx.compose.material3.Divider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -71,6 +72,8 @@ fun CreateBizCard() {
             ) {
                 Box(modifier = Modifier.height(10.dp))
                 CreateImageProfile()
+                Divider()
+                CreateInfo()
             }
         }
 
@@ -91,6 +94,17 @@ fun CreateImageProfile(modifier: Modifier=Modifier){
             modifier = modifier.size(135.dp),
             contentScale = ContentScale.Crop)
 
+    }
+}
+
+@Composable
+private fun CreateInfo(){
+    Column(modifier=Modifier.padding(5.dp),
+        horizontalAlignment = Alignment.Start
+    ) {
+        Text(text = "Sai Karthik Sistla", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.primary)
+        Text(text = "Android/Flutter Developer", modifier = Modifier.padding(3.dp))
+        Text(text = "@saikarthik", modifier = Modifier.padding(3.dp), style = MaterialTheme.typography.titleSmall)
     }
 }
 
